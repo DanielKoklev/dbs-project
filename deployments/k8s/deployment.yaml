@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pebble-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pebble-gateway
+  template:
+    metadata:
+      labels:
+        app: pebble-gateway
+    spec:
+      containers:
+      - name: gateway
+        image: pebbleblock:latest
+        ports:
+        - containerPort: 10809

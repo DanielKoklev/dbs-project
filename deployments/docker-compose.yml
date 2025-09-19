@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  meta:
+    build: ../
+    command: ["pebble-meta"]
+    ports:
+      - "7001:7001"
+  data:
+    build: ../
+    command: ["pebble-data", "--id", "n1"]
+    ports:
+      - "8001:8001"
+  gateway:
+    build: ../
+    command: ["pebble-gateway"]
+    ports:
+      - "10809:10809"
