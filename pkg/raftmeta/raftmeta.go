@@ -3,4 +3,4 @@ package raftmeta
 
 type Service struct {}
 
-func New() *Service { return *Service{} }
+func New() *Service { return &Service{} }
